@@ -4,7 +4,7 @@ contract Token {
     string internal _symbol;
     string internal _name;
     uint8 internal _decimals;
-    uint internal _totalSupply = 1000;
+    uint internal _totalSupply = 210000000;
     mapping (address => uint) internal _balanceOf;
     mapping (address => mapping (address => uint)) internal _allowances;
     
