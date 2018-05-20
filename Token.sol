@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-contract Token {
+contract DKKTESTToken {
     string internal _symbol;
     string internal _name;
     uint8 internal _decimals;
@@ -8,6 +8,7 @@ contract Token {
     mapping (address => uint) internal _balanceOf;
     mapping (address => mapping (address => uint)) internal _allowances;
     
+
     function Token(string symbol, string name, uint8 decimals, uint totalSupply) public {
         _symbol = symbol;
         _name = name;

@@ -1,16 +1,16 @@
 pragma solidity ^0.4.0;
 
-import "Token.sol";
-import "ERC20.sol";
-import "ERC223.sol";
-import "ERC223ReceivingContract.sol";
-import "github.com/OpenZeppelin/zeppelin-solidity/contracts/math/SafeMath.sol"
+import "./Token.sol";
+import "./ERC20.sol";
+import "./ERC223.sol";
+import "./ERC223ReceivingContract.sol";
+import "./SafeMath.sol";
 
-contract MyFirstToken is Token("DKK", "DEKA TEST Token", 18, 210000000), ERC20, ERC223 {
+contract DKKTESTToken is Token("DKK", "DEKA TEST Token", 18, 210000000), ERC20, ERC223 {
 
     using SafeMath for uint;
 
-    function MyFirstToken() public {
+    function DKKTESTToken() public {
         _balanceOf[msg.sender] = _totalSupply;
     }
 
@@ -19,9 +19,8 @@ contract MyFirstToken is Token("DKK", "DEKA TEST Token", 18, 210000000), ERC20, 
     }
 
     function balanceOf(address _addr) public constant returns (uint) {
-        return _balanceOf[_addr];
+       return _balanceOf[_addr];
     }
-
     function transfer(address _to, uint _value) public returns (bool) {
         if (_value > 0 &&
             _value <= _balanceOf[msg.sender] &&
@@ -32,7 +31,7 @@ contract MyFirstToken is Token("DKK", "DEKA TEST Token", 18, 210000000), ERC20, 
             return true;
         }
         return false;
-    }
+     }
 
     function transfer(address _to, uint _value, bytes _data) public returns (bool) {
         if (_value > 0 &&
